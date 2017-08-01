@@ -150,6 +150,8 @@
               </xa-datasource>
               <drivers>
                 <driver name="mysql" module="com.mysql">
+                  <!-- https://developer.jboss.org/thread/239484 -->
+                  <driver-class>com.mysql.jdbc.Driver</driver-class>
                   <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
                 </driver>
               </drivers>
@@ -333,7 +335,7 @@
         <interface name="unsecure">
             <!--
               ~  Used for IIOP sockets in the standard configuration.
-              ~                  To secure JacORB you need to setup SSL 
+              ~                  To secure JacORB you need to setup SSL
               -->
             <inet-address value="${jboss.bind.address.unsecure:127.0.0.1}"/>
         </interface>
