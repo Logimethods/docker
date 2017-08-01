@@ -36,7 +36,7 @@ docker build -t logimethods/jboss-eap-6.1.0_config -f Dockerfile_Config .
 ```
 
 ```bash
-docker run -it --rm --name database -e MYSQL_ROOT_PASSWORD=your-secret-pw -e MYSQL_DATABASE=ATG_CORE -e MYSQL_USER=atg -e MYSQL_PASSWORD=atg mysql:5.6
+docker run -it --rm --name database -e MYSQL_ROOT_PASSWORD=your-secret-pw -e MYSQL_DATABASE=ATG_CORE -e MYSQL_USER=atg -e MYSQL_PASSWORD=atg mysql:8.0.2
 ```
 
 ## External Configuration Files
@@ -62,15 +62,15 @@ docker run -it --rm -p 8280:8080 --name atg_front2 -h atg_front2 -v `pwd`/runtim
 ### SLM
 
 ```bash
-docker run -it --rm -p 8080:8080 -p 9990:9990 -p 9012:9012 --name atg_front_slm logimethods/jboss-eap-6.1.0_config
+docker run -it --rm -p 8080:8080 -p 9990:9990 -p 9012:9012 --name atg_front_slm logimethods/jboss-eap-6.1.0_config:mysql_6.0.6
 ```
 
 ### Other instances
 
 ```bash
-docker run -it --rm -p 8180:8080 --name atg_front1 logimethods/jboss-eap-6.1.0_config
+docker run -it --rm -p 8180:8080 --name atg_front1 logimethods/jboss-eap-6.1.0_config:mysql_6.0.6
 ```
 
 ```bash
-docker run -it --rm -p 8280:8080 --name atg_front2 logimethods/jboss-eap-6.1.0_config
+docker run -it --rm -p 8280:8080 --name atg_front2 logimethods/jboss-eap-6.1.0_config:mysql_6.0.6
 ```
