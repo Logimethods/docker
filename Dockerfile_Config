@@ -30,7 +30,8 @@ ENV JBOSS_HOME=/opt/jboss-eap-6.1
 # distribute mysql lib
 RUN if [ ! -d "${JBOSS_HOME}/modules/com/mysql/main" ]; then mkdir -p ${JBOSS_HOME}/modules/com/mysql/main; fi
 ##- ADD ./installers/mysql-connector-java-5.1.15-bin.jar ${JBOSS_HOME}/modules/com/mysql/main/
-RUN curl -SL http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.15/mysql-connector-java-5.1.15.jar -o mysql-connector-java-5.1.15.jar
+RUN curl -SL http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.15/mysql-connector-java-5.1.15.jar \
+  -o ${JBOSS_HOME}/modules/com/mysql/main/mysql-connector-java-5.1.15-bin.jar
 ADD ./config/modules/com/mysql/module.xml ${JBOSS_HOME}/modules/com/mysql/main/
 
 # distrbute jboss standalone configuration
