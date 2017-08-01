@@ -62,15 +62,15 @@ docker run -it --rm -p 8280:8080 --name atg_front2 -h atg_front2 -v `pwd`/runtim
 ### SLM
 
 ```bash
-docker run -it --rm -p 8080:8080 -p 9990:9990 -p 9012:9012 --name atg_front_slm logimethods/jboss-eap-6.1.0_config /opt/scripts/jboss.sh start
+docker run -it --rm -p 8080:8080 -p 9990:9990 -p 9012:9012 --name atg_front_slm logimethods/jboss-eap-6.1.0_config
 ```
 
 ### Other instances
 
 ```bash
-docker run -it --rm -p 8180:8080 --name atg_front1 logimethods/jboss-eap-6.1.0_config /opt/scripts/jboss.sh start
+docker run -it --rm -p 8180:8080 --name atg_front1 logimethods/jboss-eap-6.1.0_config
 ```
 
 ```bash
-docker run -it --rm -p 8280:8080 --name atg_front2 logimethods/jboss-eap-6.1.0_config /opt/scripts/jboss.sh start
+docker run -it --rm -p 8280:8080 --name atg_front2 logimethods/jboss-eap-6.1.0_config
 ```
