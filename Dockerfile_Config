@@ -17,6 +17,8 @@ RUN mkdir -p /var/log/jboss
 ##- ENV PATH=${JAVA_HOME}/bin:${PATH}
 
 # install jboss: you need to download JBOSS manually in the installers directory
+## http://people.redhat.com/~rploski/products/eap/download/
+## https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.1/html/Installation_Guide/index.html
 ADD ./installers/jboss-eap-6.1.0.zip /tmp/
 WORKDIR /opt/
 ##- RUN apt-get install unzip
